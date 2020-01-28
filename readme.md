@@ -77,6 +77,8 @@ session$sendCustomMessage(
 
 <https://notifyjs.jpillora.com/>
 
+JS available at: https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js
+
 ## Our goal for today 
 
 Bring `notifyjs` to Shiny
