@@ -104,3 +104,15 @@ Bring `notifyjs` to Shiny
 ### Create more custom alerts using the `notifyjs` options 
 
 > See "Custom Styling Guide" at https://notifyjs.jpillora.com/
+
++ `pop_succes(text)`
++ `pop_error(text)`
++ `pop_info(text)`
++ `pop_warn(text)`
++ `pop_succes(text, position)`
++ `pop_error(text, position)`
++ `pop_info(text, position)`
++ `pop_warn(text, position)`
++ `pop_succes(text, autoHide)`
++ `pop_error(text, duration)`
++ `pop_info(text, clickToHide)`
