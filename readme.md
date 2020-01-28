@@ -1,4 +1,73 @@
-# Bringing `notifyjs` in Shiny 
+# Bringing `notifyjs` in your golem app 
+
+## Notes 
+
+### Creating a custom JavaScript handler
+
+``` r
+golem::add_js_handler("name")
+```
+
+or add 
+
+```
+$( document ).ready(function() {
+  Shiny.addCustomMessageHandler('fun', function(arg) {
+    
+  })
+});
+```
+
+In `inst/app/www/handler.js`
+
+### Link in your app 
+
+In `R/app_ui.R` : 
+
+```
+golem_add_external_resources <- function(){
+  
+  addResourcePath(
+    'www', system.file('app/www', package = 'nineties')
+  )
+  
+  tags$head(
+    golem::activate_js(),
+    golem::favicon(), 
+    tags$script(src="www/handlers.js")
+  )
+}
+```
+
+### Calling custom handler
+
+From the server side: 
+
+```r
+session$sendCustomMessage("fun", arg)
+```
+
+__Good practice__
+
+```
+$( document ).ready(function() {
+  Shiny.addCustomMessageHandler('fun', function(arg) {
+*    arg.this + arg.that
+  })
+});
+```
+
+Call them with 
+
+```{r, eval = FALSE}
+session$sendCustomMessage(
+  "fun", 
+  list(
+    this = 40, 
+    that = 42
+  )
+)
+```
 
 ## About 
 
