@@ -52,7 +52,7 @@ __Good practice__
 ```
 $( document ).ready(function() {
   Shiny.addCustomMessageHandler('fun', function(arg) {
-*    arg.this + arg.that
+    arg.this + arg.that
   })
 });
 ```
